@@ -20,9 +20,16 @@ export default {
       del_password: '',
     }
   },
-  props: [
-    'hot_table',
-  ],
+  props: {
+    hot_table: {
+      type: Object,
+      default: {}
+    }
+  },
+  mounted() {
+    console.log(this.hot_table.id);
+    console.log(typeof this.hot_table);
+  },
   methods: {
     del_data() {
       this.$emit('close')

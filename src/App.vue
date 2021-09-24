@@ -2,13 +2,11 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <modals-container/>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import DelPopup from "./components/DelPopup";
 
 export default {
   name: 'App',
@@ -16,19 +14,10 @@ export default {
     HelloWorld
   },
   mounted(){
-    this.doc_del_rendar();
 
-  },methods : {
-    doc_del_rendar(){
-      this.$modal.show(DelPopup,{
-        hot_table : 'data',
-        modal : this.$modal },{
-        name: 'dynamic-modal',
-        width : '330px',
-        height : '130px',
-        draggable: true,
-      })
-    }
+  },
+  methods : {
+    
   }
 }
 </script>

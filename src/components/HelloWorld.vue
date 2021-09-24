@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <button type="button" @click="showPopup">팝업</button>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -27,14 +28,40 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <del-popup v-if="isModal" @close="closeModal" />
   </div>
 </template>
 
 <script>
+import DelPopup from './DelPopup.vue';
+
 export default {
   name: 'HelloWorld',
+  components: { DelPopup },
   props: {
     msg: String
+  },
+  data() {
+    return {
+      isModal: false
+    }
+  },
+  methods: {
+    showPopup() {
+      //this.isModal = true;
+      this.$modal.show(DelPopup, {
+        hot_table: { id: 'Peace-B' },
+        modal: this.$modal
+      }, {
+        name: 'dynamic-modal',
+        width: '330px',
+        height: '130px',
+        draggable: true
+      });
+    },
+    closeModal() {
+      this.isModal = false;
+    }
   }
 }
 </script>
