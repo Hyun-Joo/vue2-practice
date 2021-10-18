@@ -24,11 +24,16 @@ export default {
     hot_table: {
       type: Object,
       default: {}
+    },
+    msg: {
+      type: String,
+      default: 'Hi'
     }
   },
   mounted() {
     console.log(this.hot_table.id);
     console.log(typeof this.hot_table);
+    console.log(this.msg);
   },
   methods: {
     del_data() {

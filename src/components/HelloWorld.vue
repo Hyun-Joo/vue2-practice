@@ -51,6 +51,7 @@ export default {
       //this.isModal = true;
       this.$modal.show(DelPopup, {
         hot_table: { id: 'Peace-B' },
+        msg: 'Hello World',
         modal: this.$modal
       }, {
         name: 'dynamic-modal',
